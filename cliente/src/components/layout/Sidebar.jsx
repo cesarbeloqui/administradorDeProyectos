@@ -1,6 +1,8 @@
 import NuevoProyecto from "../proyectos/NuevoProyecto";
 import ListadoProyectos from "../proyectos/ListadoProyectos";
+
 const Sidebar = () => {
+
   return (
     <aside>
       <h1>
