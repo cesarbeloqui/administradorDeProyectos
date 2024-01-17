@@ -3,7 +3,7 @@ import proyectoContext from "../../context/proyectos/proyectoContext";
 const NuevoProyecto = () => {
   //Obtener state del formulario
   const proyectosContext = useContext(proyectoContext);
-  const { formulario } = proyectosContext;
+  const { formulario, mostrarFormulario } = proyectosContext;
   //State para proyecto
   const [proyecto, setProyecto] = useState({
     nombre: "",
@@ -30,7 +30,13 @@ const NuevoProyecto = () => {
   };
   return (
     <>
-      <button type="button" className="btn btn-block btn-primario">
+      <button
+        type="button"
+        className="btn btn-block btn-primario"
+        onClick={() => {
+          mostrarFormulario();
+        }}
+      >
         Nuevo Proyecto
       </button>
       {formulario ? (
