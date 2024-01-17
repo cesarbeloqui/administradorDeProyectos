@@ -188,6 +188,7 @@ aside {
 
 .formulario form {
   min-width: 600px;
+  width: 40%;
   margin: 0 auto;
 }
 
