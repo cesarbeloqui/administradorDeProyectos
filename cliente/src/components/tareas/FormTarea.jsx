@@ -1,4 +1,16 @@
+import proyectoContext from "../../context/proyectos/proyectoContext";
+import { useContext } from "react";
+
 const FormTarea = () => {
+  //Extraer si un proyecto esta activo
+  const ProyectoContext = useContext(proyectoContext);
+  const { proyecto } = ProyectoContext;
+  if (!proyecto) return null;
+
+  //Hago destructuring del proyecto actyual seleccionado esto con el objetivo de usar el agregar tareas al proyecto:
+
+  const [proyectoActual] = proyecto;
+
   return (
     <div className="formulario">
       <form>
