@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 
 import tareaContext from "./tareaContext";
 import tareaReducer from "./tareaReducer";
-import {} from "../../types";
+import { TAREAS_PROYECTO } from "../../types";
 
 const tareasProyecto = [
   { id: 1, nombre: "Tarea 1", estado: true, proyectoId: 1 },
@@ -22,9 +22,18 @@ const TareaState = (props) => {
   const [state, dispatch] = useReducer(tareaReducer, initialState);
 
   // Serie de funciones para el CRUD
+  //OBTENER LAS TAREAS DE UN PROYECTO
+  const obtenerTareas = (proyectoId) => {
+    dispatch({ type: TAREAS_PROYECTO, payload: proyectoId });
+  };
 
   return (
-    <tareaContext.Provider value={{ tareas: state.tareas }}>
+    <tareaContext.Provider
+      value={{
+        tareas: state.tareas,
+        obtenerTareas,
+      }}
+    >
       {props.children}
     </tareaContext.Provider>
   );
