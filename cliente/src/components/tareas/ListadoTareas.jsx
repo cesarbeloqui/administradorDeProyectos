@@ -2,10 +2,10 @@ import Tarea from "./Tarea";
 
 const ListadoTareas = () => {
   const tareasProyecto = [
-    { nombre: "Tarea 1", completada: true },
-    { nombre: "Tarea 2", completada: false },
-    { nombre: "Tarea 3", completada: true },
-    { nombre: "Tarea 4", completada: false },
+    { nombre: "Tarea 1", estado: true },
+    { nombre: "Tarea 2", estado: false },
+    { nombre: "Tarea 3", estado: true },
+    { nombre: "Tarea 4", estado: false },
   ];
   return (
     <>
@@ -18,7 +18,8 @@ const ListadoTareas = () => {
         ) : (
           tareasProyecto.map((tarea) => <Tarea tarea={tarea} />)
         )}
-      </ul>
+          </ul>
+          <button type="button" className="btn btn-eliminar">Eliminar Proyecto &times;</button>
     </>
   );
 };
