@@ -172,6 +172,7 @@ aside {
 
 .nav-principal a {
   font-weight: 900;
+  color: var(--blanco);
 }
 
 .nav-principal a:first-of-type {
