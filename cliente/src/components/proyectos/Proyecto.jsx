@@ -2,7 +2,7 @@ import React from "react";
 
 const Proyecto = ({ proyecto }) => {
   return (
-    <li key={proyecto.key}>
+    <li key={proyecto.id}>
       <button type="button" className="btn btn-blank">
         {proyecto.nombre}
       </button>
