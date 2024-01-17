@@ -5,7 +5,7 @@ import { useContext } from "react";
 const ListadoTareas = () => {
   //Extraer proyectos de state inicial
   const proyectosContext = useContext(proyectoContext);
-  const { proyecto } = proyectosContext;
+  const { proyecto, eliminarProyecto } = proyectosContext;
 
   //Si no hay proyecto seleccionado, retornar un mensaje
   if (!proyecto) return <h1>Selecciona un proyecto</h1>;
@@ -18,6 +18,10 @@ const ListadoTareas = () => {
     { id: 3, nombre: "Tarea 3", estado: true },
     { id: 4, nombre: "Tarea 4", estado: false },
   ];
+
+  const onClickEliminar = () => {
+    eliminarProyecto(proyectoActual.id);
+  };
   return (
     <>
       <h2>Proyecto: {proyectoActual.nombre}</h2>
@@ -30,7 +34,11 @@ const ListadoTareas = () => {
           tareasProyecto.map((tarea) => <Tarea tarea={tarea} key={tarea.id} />)
         )}
       </ul>
-      <button type="button" className="btn btn-eliminar">
+      <button
+        type="button"
+        className="btn btn-eliminar"
+        onClick={onClickEliminar}
+      >
         Eliminar Proyecto &times;
       </button>
     </>
