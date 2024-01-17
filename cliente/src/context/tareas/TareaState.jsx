@@ -4,8 +4,19 @@ import tareaContext from "./tareaContext";
 import tareaReducer from "./tareaReducer";
 import {} from "../../types";
 
+const tareasProyecto = [
+  { id: 1, nombre: "Tarea 1", estado: true, proyectoId: 1 },
+  { id: 2, nombre: "Tarea 2", estado: false, proyectoId: 1 },
+  { id: 3, nombre: "Tarea 3", estado: true, proyectoId: 2 },
+  { id: 4, nombre: "Tarea 4", estado: false, proyectoId: 2 },
+  { id: 2, nombre: "Tarea 2", estado: false, proyectoId: 2 },
+  { id: 1, nombre: "Tarea 1", estado: true, proyectoId: 3 },
+  { id: 4, nombre: "Tarea 4", estado: false, proyectoId: 3 },
+  { id: 3, nombre: "Tarea 3", estado: true, proyectoId: 3 },
+];
+
 const TareaState = (props) => {
-  const initialState = { tareas: [] };
+  const initialState = { tareas: tareasProyecto };
 
   // Dispatch para ejecutar las acciones
   const [state, dispatch] = useReducer(tareaReducer, initialState);
