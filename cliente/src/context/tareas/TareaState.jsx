@@ -4,7 +4,7 @@ import tareaContext from "./tareaContext";
 import tareaReducer from "./tareaReducer";
 import { TAREAS_PROYECTO } from "../../types";
 
-const tareasProyecto = [
+const tareasBack = [
   { id: 1, nombre: "Tarea 1", estado: true, proyectoId: 1 },
   { id: 2, nombre: "Tarea 2", estado: false, proyectoId: 1 },
   { id: 3, nombre: "Tarea 3", estado: true, proyectoId: 2 },
@@ -16,7 +16,7 @@ const tareasProyecto = [
 ];
 
 const TareaState = (props) => {
-  const initialState = { tareas: tareasProyecto };
+  const initialState = { tareas: tareasBack, tareasProyecto: null };
 
   // Dispatch para ejecutar las acciones
   const [state, dispatch] = useReducer(tareaReducer, initialState);
@@ -31,6 +31,7 @@ const TareaState = (props) => {
     <tareaContext.Provider
       value={{
         tareas: state.tareas,
+        tareasProyecto: state.tareasProyecto,
         obtenerTareas,
       }}
     >
