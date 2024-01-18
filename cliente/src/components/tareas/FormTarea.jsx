@@ -7,13 +7,24 @@ const FormTarea = () => {
   const { proyecto } = ProyectoContext;
   if (!proyecto) return null;
 
-  //Hago destructuring del proyecto actyual seleccionado esto con el objetivo de usar el agregar tareas al proyecto:
+  //Hago destructuring del proyecto actual seleccionado esto con el objetivo de usar el agregar tareas al proyecto:
 
   const [proyectoActual] = proyecto;
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    //Validar la tarea
+
+    //Pasar la validacion
+
+    //Agregar nueva tarea al state de tareas
+
+    //Reiniciar el formulario
+  };
+
   return (
     <div className="formulario">
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="contenedor-input">
           <input
             type="text"
